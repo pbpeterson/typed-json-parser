@@ -1,9 +1,17 @@
 {
   "name": "typed-json-parser",
-  "version": "0.0.3",
+  "version": "0.0.4",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
   "scripts": {
     "build": "tsup",
     "test": "vitest run",
+    "prepublishOnly": "npm run build",
     "test:watch": "vitest"
   },
   "keywords": [],
