@@ -1,6 +1,6 @@
 {
   "name": "typed-json-parser",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -8,13 +8,22 @@
       "require": "./dist/index.js"
     }
   },
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsup",
     "test": "vitest run",
-    "prepublishOnly": "npm run build",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "prepublishOnly": "npm run build"
   },
   "keywords": [],
+  "publishConfig": {
+    "access": "public"
+  },
   "author": [
     {
       "name": "Peterson Pereira Bozza",
