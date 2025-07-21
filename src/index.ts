@@ -18,14 +18,7 @@ export function parseJSON<T = any>(jsonString: string): ParseResult<T> {
 	} catch (err) {
 		return {
 			data: null,
-			error:
-				err instanceof SyntaxError
-					? err
-					: new SyntaxError(
-							`Invalid JSON. ${
-								err instanceof Error ? err.message : String(err)
-							}`
-					  ),
+			error: err instanceof SyntaxError ? err : new SyntaxError("Invalid JSON"),
 		};
 	}
 }
